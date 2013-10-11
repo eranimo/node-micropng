@@ -1,13 +1,17 @@
 {
   "name": "micropng",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A simple script that makes and outputs png images",
+  "homepage": "https://github.com/eranimo/node-micropng/",
   "main": "index.js",
   "keywords": [
     "png"
   ],
   "author": "Kaelan Cooter",
   "license": "BSD",
+  "engines": {
+    "node": ">=0.8.0"
+  },
   "dependencies": {
     "pngjs": "~0.4.0"
   }
