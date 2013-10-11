@@ -9,6 +9,20 @@ function decToHex (number){
 
 /*  MicroPNG : Number width, Number height
     creates a new png image of a defined size
+
+    Examples:
+
+    var png = new MicroPNG(200,200);
+    png.background([255,255,255]);
+    png.point(1, 1, [100, 200, 100]);
+    png.rect(0, 0, 200, 200, [200, 40, 40]);
+    png.rect(4, 4, 80, 80, [70, 70, 70], true, [200,200,200]);
+    
+    // Exports PNG file:
+    png.exportFile(__dirname + '/bg.png');
+
+    // Exports to server
+    png.exportServer(8084);
 */
 var MicroPNG = function (width, height){
     this.png = new PNG({
@@ -96,11 +110,4 @@ MicroPNG.prototype.exportServer = function (port) {
         });
     }).listen(port);
 };
-
-var png = new MicroPNG(200,200);
-png.background([255,255,255]);
-png.point(1, 1, [100, 200, 100]);
-png.rect(0, 0, 200, 200, [200, 40, 40]);
-png.rect(4, 4, 80, 80, [70, 70, 70], true, [200,200,200]);
-png.exportFile(__dirname + '/bg.png');
-//png.exportServer(8084);
+module.exports = MicroPNG;
